@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullname: "",
