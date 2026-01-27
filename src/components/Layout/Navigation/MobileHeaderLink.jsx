@@ -1,29 +1,44 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const MobileHeaderLink = ({ item, onClose }) => {
-  const [submenuOpen, setSubmenuOpen] = useState(false);
   const location = useLocation();
+  const userClickedSub = useRef(false);
 
-  const isActive = item.href === location.pathname;
+  const isActive = item.href !== "#" && item.href === location.pathname;
+
+  const isSubActive = item.submenu?.some(
+    (sub) => sub.href === location.pathname,
+  );
+
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+
+  // ✅ Route-based auto open (only if user didn't manually close)
+  useEffect(() => {
+    if (isSubActive && !userClickedSub.current) {
+      setSubmenuOpen(true);
+    }
+    userClickedSub.current = false;
+  }, [location.pathname, isSubActive]);
 
   const handleToggle = (e) => {
     if (item.submenu) {
       e.preventDefault();
       setSubmenuOpen((prev) => !prev);
     } else {
-      onClose?.(); 
+      onClose?.();
     }
   };
 
   return (
     <div className="w-full">
+      {/* Parent */}
       <Link
         to={item.href}
         onClick={handleToggle}
         className={`flex items-center justify-between w-full py-2 px-3 rounded-lg transition
           ${
-            submenuOpen || isActive
+            isActive || isSubActive
               ? "bg-primary/10 text-primary"
               : "text-muted hover:bg-primary/5"
           }
@@ -53,6 +68,7 @@ const MobileHeaderLink = ({ item, onClose }) => {
         )}
       </Link>
 
+      {/* Submenu */}
       {submenuOpen && item.submenu && (
         <div className="ml-3 mt-1 space-y-1">
           {item.submenu.map((subItem, index) => {
@@ -70,7 +86,8 @@ const MobileHeaderLink = ({ item, onClose }) => {
                   }
                 `}
                 onClick={() => {
-                  setSubmenuOpen(false);
+                  userClickedSub.current = true; 
+                  setSubmenuOpen(false); 
                   onClose?.(); 
                 }}
               >

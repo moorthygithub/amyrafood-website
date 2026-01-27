@@ -8,17 +8,17 @@ export default function ContactForm() {
     fullname: "",
     email: "",
     phnumber: "",
-    subject: "",
+    interested: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
   const [loader, setLoader] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const isValid = Object.values(formData).every(
-      (value) => value.trim() !== ""
+      (value) => value.trim() !== "",
     );
     setIsFormValid(isValid);
   }, [formData]);
@@ -36,41 +36,47 @@ export default function ContactForm() {
       fullname: "",
       email: "",
       phnumber: "",
-      subject: "",
+      interested: "",
       message: "",
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);
+    setErrorMessage("");
+    setShowThanks(false);
 
     try {
-      // const response = await fetch(
-      //   "https://formsubmit.co/ajax/amyraglobal786@gmail.com",
-      //   {
-      //     method: "POST",
-      //     headers: { "Content-type": "application/json" },
-      //     body: JSON.stringify({
-      //       FullName: formData.fullname,
-      //       Email: formData.email,
-      //       PhoneNo: formData.phnumber,
-      //       Subject: formData.subject,
-      //       Message: formData.message,
-      //     }),
-      //   }
-      // );
+      const response = await fetch("https://www.amyrafood.com/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullname,
+          email: formData.email,
+          mobile: formData.phnumber,
+          interested: formData.interested,
+          message: formData.message,
+        }),
+      });
 
-      const data = true;
-      if (data.success) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setShowThanks(true);
         resetForm();
+
         setTimeout(() => {
           setShowThanks(false);
         }, 5000);
+      } else {
+        setErrorMessage(
+          data.message || "Something went wrong. Please try again.",
+        );
       }
     } catch (error) {
-      console.log("Error:", error.message);
+      setErrorMessage("Network error. Please check your internet connection.");
     } finally {
       setLoader(false);
     }
@@ -144,7 +150,7 @@ export default function ContactForm() {
                       value={formData.fullname}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
                     />
                   </div>
                   <div>
@@ -157,7 +163,7 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
                     />
                   </div>
                 </div>
@@ -173,20 +179,20 @@ export default function ContactForm() {
                       value={formData.phnumber}
                       onChange={handleChange}
                       placeholder="+971 58 8226 177"
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-900 mb-2">
-                      Subject
+                      Interested
                     </label>
                     <input
                       type="text"
-                      name="subject"
-                      value={formData.subject}
+                      name="interested"
+                      value={formData.interested}
                       onChange={handleChange}
-                      placeholder="Export Inquiry"
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
+                      placeholder="Enter Your Interested Here"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400"
                     />
                   </div>
                 </div>
@@ -202,7 +208,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     placeholder="Tell us about your inquiry..."
                     rows="5"
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400 resize-none"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300 text-gray-900 placeholder-gray-400 resize-none"
                   ></textarea>
                 </div>
 
@@ -230,7 +236,7 @@ export default function ContactForm() {
               </div>
 
               {showThanks && (
-                <div className="mt-6 p-4 bg-primary/40 border-2 border-primary rounded-xl flex items-center gap-3 animate-bounce">
+                <div className="mt-6 p-4 bg-green/40 border-2 border-green-600 rounded-xl flex items-center gap-3 animate-bounce">
                   <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-green-900">Success!</p>
@@ -240,11 +246,19 @@ export default function ContactForm() {
                   </div>
                 </div>
               )}
+              {errorMessage && (
+                <div className="mt-6 p-4 bg-red-100 border-2 border-red-400 rounded-xl flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-red-700">Error</p>
+                    <p className="text-red-600 text-sm">{errorMessage}</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
         <div
           data-aos="zoom-in"
           className="text-center bg-gradient-to-r from-primary/50 rounded-3xl p-8 border-2 border-primary"
