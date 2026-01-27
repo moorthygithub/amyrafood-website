@@ -54,14 +54,13 @@ const Newsletter = () => {
             data-aos-duration="1000"
           >
             <img
-              src="/images/Newsletter/soup.webp"
+              src="/images/Newsletter/newsletter.png"
               alt="soup"
-              width="626"
-              height="602"
-              className="-mt-24"
+              style={{ width: "auto", height: "400px", zIndex: -1 }}
+              // className="-mt-24"
             />
 
-            <img
+            {/* <img
               src="/images/Newsletter/onion.webp"
               alt="onion"
               width="300"
@@ -69,9 +68,9 @@ const Newsletter = () => {
               className="absolute top-[78%]"
               data-aos="zoom-in"
               data-aos-delay="300"
-            />
+            /> */}
 
-            <img
+            {/* <img
               src="/images/Newsletter/lec.webp"
               alt="lettuce"
               width="300"
@@ -79,14 +78,14 @@ const Newsletter = () => {
               className="absolute top-[30%] right-[-23%]"
               data-aos="zoom-in"
               data-aos-delay="450"
-            />
+            /> */}
 
             <img
               src="/images/Newsletter/yellow.svg"
               alt="yellow"
               width="59"
               height="59"
-              className="absolute bottom-[10%] left-0"
+              className="absolute top-[10%] left-0"
               data-aos="fade-up"
               data-aos-delay="600"
             />

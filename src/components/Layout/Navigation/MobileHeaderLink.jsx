@@ -1,30 +1,45 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const MobileHeaderLink = ({ item }) => {
+const MobileHeaderLink = ({ item, onClose }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = item.href === location.pathname;
 
   const handleToggle = (e) => {
     if (item.submenu) {
-      e.preventDefault(); // prevent navigation when toggling submenu
+      e.preventDefault();
       setSubmenuOpen((prev) => !prev);
+    } else {
+      onClose?.(); 
     }
   };
 
   return (
-    <div className="relative w-full">
+    <div className="w-full">
       <Link
         to={item.href}
         onClick={handleToggle}
-        className="flex items-center justify-between w-full py-2 text-muted focus:outline-hidden"
+        className={`flex items-center justify-between w-full py-2 px-3 rounded-lg transition
+          ${
+            submenuOpen || isActive
+              ? "bg-primary/10 text-primary"
+              : "text-muted hover:bg-primary/5"
+          }
+        `}
       >
         {item.label}
+
         {item.submenu && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1.5em"
-            height="1.5em"
+            width="1.4em"
+            height="1.4em"
             viewBox="0 0 24 24"
+            className={`transition-transform ${
+              submenuOpen ? "rotate-180" : ""
+            }`}
           >
             <path
               fill="none"
@@ -39,17 +54,30 @@ const MobileHeaderLink = ({ item }) => {
       </Link>
 
       {submenuOpen && item.submenu && (
-        <div className="bg-white p-2 w-full">
-          {item.submenu.map((subItem, index) => (
-            <Link
-              key={index}
-              to={subItem.href}
-              className="block py-2 text-gray-500 hover:bg-gray-200"
-              onClick={() => setSubmenuOpen(false)}
-            >
-              {subItem.label}
-            </Link>
-          ))}
+        <div className="ml-3 mt-1 space-y-1">
+          {item.submenu.map((subItem, index) => {
+            const subActive = subItem.href === location.pathname;
+
+            return (
+              <Link
+                key={index}
+                to={subItem.href}
+                className={`block py-2 px-3 rounded-lg text-sm transition
+                  ${
+                    subActive
+                      ? "bg-primary/15 text-primary"
+                      : "text-gray-500 hover:bg-primary/10"
+                  }
+                `}
+                onClick={() => {
+                  setSubmenuOpen(false);
+                  onClose?.(); 
+                }}
+              >
+                {subItem.label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>

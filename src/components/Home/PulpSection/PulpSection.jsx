@@ -12,13 +12,12 @@ const PulpSection = () => {
         >
           {" "}
           <p className="text-primary text-lg font-normal mb-3 tracking-widest uppercase">
-            Our Chefs
+            Our Products
           </p>
           <h2 className="text-3xl font-semibold">Meet Our Culinary Experts</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Left Image */}
-          <div data-aos="fade-right">
+          <div data-aos="fade-up">
             <img
               src="/images/Fruits/mango.png"
               alt="Mango Pulp"
@@ -26,18 +25,30 @@ const PulpSection = () => {
             />
           </div>
 
-          <div data-aos="fade-left">
-            <p className="text-primary font-semibold uppercase tracking-widest mb-3">
+          <div>
+            <p
+              className="text-primary font-semibold uppercase tracking-widest mb-3"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               Mango Pulp
             </p>
 
-            <p className="text-black/70 leading-relaxed mb-5 text-justify">
+            <p
+              className="text-black/70 leading-relaxed mb-5 text-justify"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               Organic mango pulp has a delicate taste and is commonly used in
               food processing industries because of its numerous health benefits
               and applications.
             </p>
 
-            <p className="text-black/70 leading-relaxed mb-5 text-justify">
+            <p
+              className="text-black/70 leading-relaxed mb-5 text-justify"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               We are the most preferred mango pulp and concentrate manufacturer
               and suppliers in Tamilnadu, Krishnagiri, and around the globe
               because of our superior quality and the absence of preservatives.
@@ -46,7 +57,11 @@ const PulpSection = () => {
               professionals.
             </p>
 
-            <p className="text-black/70 leading-relaxed text-justify">
+            <p
+              className="text-black/70 leading-relaxed text-justify"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
               We manufacture frozen mango dices maintained at -18 to -21°C using
               sound mature, GMO-free mangoes.
             </p>

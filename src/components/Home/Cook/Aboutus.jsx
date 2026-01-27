@@ -1,3 +1,5 @@
+import { useLocation } from "react-router-dom";
+
 const Aboutus = () => {
   return (
     <section className="relative" id="aboutus">
@@ -8,10 +10,10 @@ const Aboutus = () => {
           className="absolute right-0 bottom-[-28%] xl:block hidden"
         >
           <img
-            src="/images/Cook/burger.webp"
+            src="/images/Cook/burger.png"
             alt="burger-image"
-            width={463}
-            height={622}
+        
+            style={{ width: "auto", height: "400px" }}
           />
         </div>
 

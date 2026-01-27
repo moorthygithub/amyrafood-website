@@ -1,8 +1,32 @@
+import { Mail, MapPin, Phone } from "lucide-react";
+
 // Header
 export const HeaderData = [
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Products", href: "/#menu" },
-  { label: "Contact Us", href: "/#reserve" },
+  {
+    label: "Products",
+    href: "#",
+    submenu: [
+      {
+        label: "Pulp",
+        href: "/products/pulp",
+      },
+      {
+        label: "Honey",
+        href: "/products/honey",
+      },
+      {
+        label: "Rice",
+        href: "/products/rice",
+      },
+      {
+        label: "Flour",
+        href: "/products/flour",
+      },
+    ],
+  },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 // Features
@@ -161,9 +185,24 @@ export const FooterLinkData = [
     section: "Company",
     links: [
       { label: "Home", href: "/" },
-      { label: "About Us", href: "/#aboutus" },
-      { label: "Menu", href: "/#menu" },
-      { label: "Reserve Table", href: "/#reserve" },
+      { label: "About Us", href: "/about" },
+      {
+        label: "Pulp",
+        href: "/products/pulp",
+      },
+      {
+        label: "Honey",
+        href: "/products/honey",
+      },
+      {
+        label: "Rice",
+        href: "/products/rice",
+      },
+      {
+        label: "Flour",
+        href: "/products/flour",
+      },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
@@ -203,21 +242,21 @@ export const ProductInfoData = [
     description:
       "Pure, natural honey sourced from trusted beekeepers for export markets.",
     imgSrc: "/images/Fruits/honey.png",
-    link: "#",
+    link: "/products/honey",
   },
   {
     title: "Premium Rice",
     description:
       "Basmati and long-grain rice varieties perfect for retail and food service industries.",
     imgSrc: "/images/Fruits/rice.png",
-    link: "#",
+    link: "/products/rice",
   },
   {
     title: "Quality Flour",
     description:
       "High-quality wheat and specialty flours for industrial bakery and manufacturing.",
     imgSrc: "/images/Fruits/flour.png",
-    link: "#",
+    link: "/products/flour",
   },
 ];
 export const ProductFeaturesData = [
@@ -242,5 +281,234 @@ export const ProductFeaturesData = [
     icon: "settings",
     title: "Customizable",
     description: "Build your own fruit basket with your favorite selections",
+  },
+];
+export const contactInfo = [
+  {
+    icon: MapPin,
+    title: "Address",
+    content:
+      "M02-355, M Floor, Plot No. 128-248, Al Kabeesi Area, Deira - Dubai, UAE",
+    color: "bg-blue-100 text-blue-600",
+    delay: 0,
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    content: "amyraglobal786@gmail.com",
+    color: "bg-green-100 text-green-600",
+    delay: 100,
+  },
+  {
+    icon: Phone,
+    title: "Mobile",
+    content: "+97158822 8177",
+    color: "bg-orange-100 text-orange-600",
+    delay: 200,
+  },
+];
+export const Exportservices = [
+  {
+    title: "Global Shipping",
+    description: "Reliable logistics network spanning all major trade routes",
+    delay: 0,
+  },
+  {
+    title: "Export Packaging",
+    description:
+      "Industry-compliant packaging ensuring safe international transit",
+    delay: 100,
+  },
+  {
+    title: "Market Access",
+    description:
+      "Strategic UAE hub serving Middle East and global destinations",
+
+    delay: 200,
+  },
+  {
+    title: "Bulk Supply",
+    description: "Large-volume orders for distributors worldwide reliably",
+    delay: 300,
+  },
+];
+export const riceProducts = [
+  {
+    name: "1401 Raw Basmati Rice",
+    image: "/images/rice/1401-raw-basmati.png",
+    description:
+      "Premium long-grain basmati rice with natural aroma and superior elongation.",
+  },
+  {
+    name: "PR11 Golden Sella Non Basmati Rice",
+    image: "/images/rice/pr11-golden-sella-non-basmati.png",
+    description:
+      "High-quality parboiled rice offering consistency and excellent cooking results.",
+  },
+  {
+    name: "1211 Golden Sella Basmati Rice",
+    image: "/images/rice/1211-golden-sella-basmati.png",
+    description:
+      "Aromatic basmati rice with golden sella processing for enhanced durability.",
+  },
+  {
+    name: "1121 Steam Basmati Rice",
+    image: "/images/rice/1121-steam-basmati.png",
+    description:
+      "Extra-long grain basmati rice processed with steam for purity and softness.",
+  },
+  {
+    name: "PR11 White Sella Non Basmati Rice",
+    image: "/images/rice/pr11-white-sella-non-basmati.png",
+    description:
+      "Clean white sella rice suitable for bulk and large-scale consumption.",
+  },
+  {
+    name: "1121 White Sella Basmati Rice",
+    image: "/images/rice/1121-white-sella-basmati.png",
+    description:
+      "Premium white sella basmati rice known for its elegant appearance and taste.",
+  },
+  {
+    name: "Sharbati Basmati Rice",
+    image: "/images/rice/sharbati-basmati.png",
+    description:
+      "Soft-textured basmati rice with rich taste ideal for daily meals.",
+  },
+  {
+    name: "PR11 Steam Non Basmati Rice",
+    image: "/images/rice/pr11-steam-non-basmati.png",
+    description:
+      "Steam-processed non-basmati rice with uniform grains and reliable quality.",
+  },
+  {
+    name: "1509 Golden Sella Basmati Rice",
+    image: "/images/rice/1509-golden-sella-basmati.png",
+    description:
+      "Long-grain basmati rice with golden sella finish and excellent elongation.",
+  },
+  {
+    name: "1509 Steam Basmati Rice",
+    image: "/images/rice/1509-steam-basmati.png",
+    description:
+      "Steam-processed basmati rice offering natural flavor and fine texture.",
+  },
+  {
+    name: "Indian Basmati Lemon Sella Creamy Rice",
+    image: "/images/rice/lemon-sella-creamy.png",
+    description:
+      "Creamy lemon sella basmati rice with attractive color and premium quality.",
+  },
+  {
+    name: "1509 Golden Sella Rice",
+    image: "/images/rice/1509-golden-sella.png",
+    description:
+      "Golden sella rice with uniform grains and export-grade consistency.",
+  },
+  {
+    name: "MRM Sun Rice (1121 Extra Long Grain Golden Sella)",
+    image: "/images/rice/mrm-sun-rice.png",
+    description:
+      "Branded extra-long grain basmati rice with superior golden sella finish.",
+  },
+  {
+    name: "1509 Lemon Sella Rice",
+    image: "/images/rice/1509-lemon-sella.png",
+    description:
+      "Lemon sella processed rice with creamy texture and excellent cooking yield.",
+  },
+  {
+    name: "MRM Moon Rice (1121 Extra Long Grain Lemon Sella)",
+    image: "/images/rice/mrm-moon-rice.png",
+    description:
+      "Premium branded basmati rice with extra-long grains and refined lemon sella processing.",
+  },
+];
+export const FlourProducts = [
+  {
+    name: "Amyra Atta – Premium Quality",
+    image: "/images/flour/amyra-atta-premium.png",
+    description:
+      "Finely milled wheat flour delivering superior softness and nutritional value.",
+  },
+  {
+    name: "Amyra Maida – All Purpose",
+    image: "/images/flour/amyra-maida-all-purpose.png",
+    description:
+      "Refined all-purpose flour suitable for baking, cooking, and confectionery.",
+  },
+  {
+    name: "Amyra Chakki Atta – Super Value",
+    image: "/images/flour/amyra-chakki-atta-super-value.png",
+    description:
+      "Stone-ground wheat flour offering excellent value and everyday quality.",
+  },
+  {
+    name: "Amyra Suji – Premium Quality",
+    image: "/images/flour/amyra-suji-premium.png",
+    description:
+      "High-quality semolina with uniform granules for perfect texture.",
+  },
+  {
+    name: "Amyra Maida – Super Value",
+    image: "/images/flour/amyra-maida-super-value.png",
+    description:
+      "Economical refined flour designed for bulk and regular usage.",
+  },
+  {
+    name: "Amyra Chiroti Rawa – Premium Quality",
+    image: "/images/flour/amyra-chiroti-rawa-premium.png",
+    description:
+      "Fine rawa ideal for traditional sweets and premium preparations.",
+  },
+  {
+    name: "Amyra Maida – Premium Quality",
+    image: "/images/flour/amyra-maida-premium.png",
+    description:
+      "Premium-grade refined flour offering excellent fineness and performance.",
+  },
+  {
+    name: "Amyra Suji – Super Value",
+    image: "/images/flour/amyra-suji-super-value.png",
+    description:
+      "Cost-effective semolina suitable for large-scale cooking needs.",
+  },
+  {
+    name: "Amyra Chakki Atta – Premium Quality",
+    image: "/images/flour/amyra-chakki-atta-premium.png",
+    description:
+      "Premium stone-ground atta with rich taste and consistent quality.",
+  },
+];
+export const honeyProducts = [
+  {
+    name: "Sidr Honey",
+    image: "/images/honey/sidr-honey.png",
+    description:
+      "Rare premium honey from Sidr tree nectar, dark amber, rich taste, prized for immunity and medicinal benefits.",
+  },
+  {
+    name: "Acacia Honey",
+    image: "/images/honey/acacia-honey.png",
+    description:
+      "Light and clear honey from Acacia blossoms, mild sweetness, stays liquid longer, great for digestion and immunity.",
+  },
+  {
+    name: "Karanj Honey",
+    image: "/images/honey/karanj-honey.png",
+    description:
+      "Medicinal honey from Karanj tree, dark color, earthy flavor, used in Ayurveda for skin care and detoxification.",
+  },
+  {
+    name: "Sundarban Honey",
+    image: "/images/honey/sundarban-honey.png",
+    description:
+      "Wild forest honey from Sundarbans mangroves, dark and aromatic, rich in minerals and antioxidants for immunity.",
+  },
+  {
+    name: "Multi-floral Honey",
+    image: "/images/honey/multifloral-honey.png",
+    description:
+      "Honey from various flowering plants, rich and balanced flavor, ideal for daily nutrition and overall wellness.",
   },
 ];

@@ -68,14 +68,14 @@ const Header = () => {
 
         {/* Right Section */}
         <div className="flex items-center gap-3">
-          <Link
-            to="#"
+          <a
+            href="tel:+971588228177"
             className="hidden xl:flex items-center gap-2 text-lg font-medium hover:text-primary"
           >
             <Phone className="text-primary" />
-            +1 (909) 235-9814
-          </Link>
-{/* 
+            +97158822 8177
+          </a>
+          {/* 
           <button
             className="hidden lg:block bg-primary/15 text-primary hover:bg-primary hover:text-white px-6 py-2 rounded-full font-medium"
             onClick={() => setIsSignInOpen(true)}
@@ -117,19 +117,23 @@ const Header = () => {
           </button>
         </div>
 
-        <Link
-          to="#"
+        <a
+          href="tel:+971588228177"
           className="flex items-center gap-2 px-4 mt-4 text-lg font-medium"
         >
           <Phone className="text-primary" />
-          +1 (909) 235-9814
-        </Link>
+          +97158822 8177
+        </a>
 
         <nav className="flex flex-col p-4">
           {HeaderData.map((item, index) => (
-            <MobileHeaderLink key={index} item={item} />
+            <MobileHeaderLink
+              key={index}
+              item={item}
+              onClose={() => setNavbarOpen(false)}
+            />
           ))}
-{/* 
+          {/* 
           <div className="mt-6 space-y-4">
             <button
               className="w-full bg-primary text-white py-2 rounded-lg"

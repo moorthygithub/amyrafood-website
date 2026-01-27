@@ -1,66 +1,7 @@
-import React, { useEffect } from "react";
-import { Truck, Package, Globe, Zap, MapPin, Send } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import { Exportservices } from "../../../data/siteData";
 
 export default function ExportServices() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-    });
-  }, []);
-
-  const services = [
-    {
-      icon: Truck,
-      title: "Global Shipping",
-      description: "Reliable logistics network spanning all major trade routes",
-      bg: "bg-blue-50",
-      border: "border-blue-300",
-      iconBg: "bg-blue-500",
-      accent: "bg-blue-500",
-      hoverBg: "hover:bg-blue-100",
-      delay: 0,
-    },
-    {
-      icon: Package,
-      title: "Export Packaging",
-      description:
-        "Industry-compliant packaging ensuring safe international transit",
-      bg: "bg-green-50",
-      border: "border-green-300",
-      iconBg: "bg-green-500",
-      accent: "bg-green-500",
-      hoverBg: "hover:bg-green-100",
-      delay: 100,
-    },
-    {
-      icon: Globe,
-      title: "Market Access",
-      description:
-        "Strategic UAE hub serving Middle East and global destinations",
-      bg: "bg-purple-50",
-      border: "border-purple-300",
-      iconBg: "bg-purple-500",
-      accent: "bg-purple-500",
-      hoverBg: "hover:bg-purple-100",
-      delay: 200,
-    },
-    {
-      icon: Zap,
-      title: "Bulk Supply",
-      description: "Large-volume orders for distributors worldwide",
-      bg: "bg-orange-50",
-      border: "border-orange-300",
-      iconBg: "bg-orange-500",
-      accent: "bg-orange-500",
-      hoverBg: "hover:bg-orange-100",
-      delay: 300,
-    },
-  ];
-
   return (
     <section className="relative w-full py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,45 +20,25 @@ export default function ExportServices() {
             logistics and market expertise
           </h2>
         </div>
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-y-28 gap-x-6 my-10">
+          {Exportservices.map((item, i) => (
+            <div className="hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer">
               <div
-                key={index}
+                key={i}
                 data-aos="fade-up"
-                data-aos-delay={service.delay}
-                className="group"
+                data-aos-delay={`${i * 100}`}
+                className="p-8 relative rounded-3xl bg-gradient-to-b from-primary/10 to-white shadow-md"
               >
-                <div
-                  className={`group ${service.bg} ${service.hoverBg} border-2 ${service.border} rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
-                >
-                  {/* Icon */}
-                  <div
-                    className={`w-14 h-14 rounded-xl ${service.iconBg} flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110`}
-                  >
-                    <IconComponent className="w-7 h-7 text-white" />
-                  </div>
+                <p className="text-2xl text-black font-semibold text-center">
+                  {item.title}
+                </p>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed flex-grow">
-                    {service.description}
-                  </p>
-
-                  {/* Accent Line */}
-                  <div
-                    className={`mt-6 h-1 w-12 ${service.accent} rounded-full transition-all duration-300 group-hover:w-full`}
-                  />
-                </div>
+                <p className="text-base font-normal text-black/50 text-center mt-2 leading-6">
+                  {item.description}
+                </p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -141,7 +62,7 @@ export default function ExportServices() {
         </div>
 
         {/* CTA Section */}
-        <div
+        {/* <div
           data-aos="fade-up"
           data-aos-delay="300"
           className="bg-gradient-to-r from-primary/50 to-primary/10 rounded-2xl p-12 border border-primary text-center"
@@ -157,7 +78,7 @@ export default function ExportServices() {
             <Send className="w-5 h-5" />
             Start Exporting With Us
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -6,52 +6,47 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import { FooterLinkData } from "../../data/siteData";
 import Logo from "./Logo/logo";
+import { FooterLinkData } from "../../data/siteData";
 
 const Footer = () => {
   return (
-    <footer className="pt-8">
-      <div className="container">
+    <footer
+      className="relative pt-16 text-white"
+      style={{
+        backgroundImage: "url('/images/Logo/fotter.webp')",
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
+        // backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/90"></div>
+
+      <div className="relative z-10 container">
         <div className="grid grid-cols-1 sm:grid-cols-6 lg:gap-20 md:gap-24 sm:gap-12 gap-12 pb-10">
           {/* Logo & Social */}
           <div className="col-span-2">
             <Logo />
-            <p className="text-sm font-medium text-grey my-5 max-w-[70%]">
+
+            <p className="text-sm font-medium text-white/80 my-5 max-w-[70%]">
               Open an account in minutes, get full financial control for much
               longer.
             </p>
 
             <div className="flex gap-6 items-center">
-              <a
-                href="#"
-                className="group bg-white hover:bg-primary rounded-full shadow-xl p-3"
-              >
-                <Facebook
-                  size={16}
-                  className="group-hover:text-white text-black"
-                />
-              </a>
-
-              <a
-                href="#"
-                className="group bg-white hover:bg-primary rounded-full shadow-xl p-3"
-              >
-                <Instagram
-                  size={16}
-                  className="group-hover:text-white text-black"
-                />
-              </a>
-
-              <a
-                href="#"
-                className="group bg-white hover:bg-primary rounded-full shadow-xl p-3"
-              >
-                <Twitter
-                  size={16}
-                  className="group-hover:text-white text-black"
-                />
-              </a>
+              {[Facebook, Instagram, Twitter].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="group bg-white/10 hover:bg-primary rounded-full shadow-xl p-3 transition-all"
+                >
+                  <Icon
+                    size={16}
+                    className="text-white group-hover:text-white"
+                  />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -60,7 +55,7 @@ const Footer = () => {
             <div className="flex gap-20">
               {FooterLinkData.map((section, i) => (
                 <div key={i}>
-                  <p className="text-black text-xl font-semibold mb-9">
+                  <p className="text-white text-xl font-semibold mb-9">
                     {section.section}
                   </p>
                   <ul>
@@ -68,7 +63,7 @@ const Footer = () => {
                       <li key={idx} className="mb-3">
                         <a
                           href={item.href}
-                          className="text-black/60 hover:text-black text-base"
+                          className="text-white/70 hover:text-white text-base transition"
                         >
                           {item.label}
                         </a>
@@ -85,22 +80,26 @@ const Footer = () => {
             <div className="flex flex-col gap-5">
               <div className="flex items-start">
                 <MapPin className="text-primary me-2" size={22} />
-                <p className="text-black text-base">
-                  925 Filbert Street Pennsylvania 18072
+                <p className="text-white/80 text-base">
+                  M02-355, M Floor, Plot No. 128-248, Al Kabeesi Area, Deira
+                  Dubai, United Arab Emirates{" "}
                 </p>
               </div>
 
-              <a href="tel:+19092359814" className="flex items-center">
+              <a href="tel:+971588228177" className="flex items-center">
                 <Phone className="text-primary me-2" size={22} />
-                <p className="text-black/60 hover:text-black text-base">
-                  +1 (909) 235-9814
+                <p className="text-white/70 hover:text-white text-base transition">
+                  +97158822 8177
                 </p>
               </a>
 
-              <a href="mailto:info@gmail.com" className="flex items-center">
+              <a
+                href="mailto:amyraglobal786@gmail.com"
+                className="flex items-center"
+              >
                 <Mail className="text-primary me-2" size={22} />
-                <p className="text-black/60 hover:text-black text-base">
-                  info@gmail.com
+                <p className="text-white/70 hover:text-white text-base transition">
+                  amyraglobal786@gmail.com
                 </p>
               </a>
             </div>
@@ -108,21 +107,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-grey/15 py-5 flex flex-col sm:flex-row justify-between items-center gap-5">
-          <p className="text-sm text-black/70">
+        <div className="border-t border-white/15 py-5 flex flex-col sm:flex-row justify-between items-center gap-5">
+          <p className="text-sm text-white/70">
             ©2026 - AG Solutions. All Rights Reserved.
           </p>
 
           <div>
             <a
               href="#"
-              className="text-sm text-black/70 px-5 border-r border-grey/15 hover:text-primary"
+              className="text-sm text-white/70 px-5 border-r border-white/15 hover:text-primary transition"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-sm text-black/70 px-5 hover:text-primary"
+              className="text-sm text-white/70 px-5 hover:text-primary transition"
             >
               Terms & Conditions
             </a>

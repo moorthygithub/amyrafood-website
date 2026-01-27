@@ -13,14 +13,13 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Features />
       <Aboutus />
       <PulpSection />
       <ProductFeatures />
       <ExportServices />
+      {/* <Features /> */}
       {/* <Expert /> */}
       {/* <Gallery /> */}
-      <ContactForm />
       <Newsletter />
     </main>
   );
