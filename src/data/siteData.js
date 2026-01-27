@@ -334,90 +334,120 @@ export const Exportservices = [
 ];
 export const riceProducts = [
   {
+    category: "rice",
+    id: 1,
     name: "1401 Raw Basmati Rice",
     image: "/images/rice/1401-raw-basmati.png",
     description:
       "Premium long-grain basmati rice with natural aroma and superior elongation.",
   },
   {
+    category: "rice",
+    id: 2,
     name: "PR11 Golden Sella Non Basmati Rice",
     image: "/images/rice/pr11-golden-sella-non-basmati.png",
     description:
       "High-quality parboiled rice offering consistency and excellent cooking results.",
   },
   {
+    category: "rice",
+    id: 3,
     name: "1211 Golden Sella Basmati Rice",
     image: "/images/rice/1211-golden-sella-basmati.png",
     description:
       "Aromatic basmati rice with golden sella processing for enhanced durability.",
   },
   {
+    category: "rice",
+    id: 4,
     name: "1121 Steam Basmati Rice",
     image: "/images/rice/1121-steam-basmati.png",
     description:
       "Extra-long grain basmati rice processed with steam for purity and softness.",
   },
   {
+    category: "rice",
+    id: 5,
     name: "PR11 White Sella Non Basmati Rice",
     image: "/images/rice/pr11-white-sella-non-basmati.png",
     description:
       "Clean white sella rice suitable for bulk and large-scale consumption.",
   },
   {
+    category: "rice",
+    id: 6,
     name: "1121 White Sella Basmati Rice",
     image: "/images/rice/1121-white-sella-basmati.png",
     description:
       "Premium white sella basmati rice known for its elegant appearance and taste.",
   },
   {
+    category: "rice",
+    id: 7,
     name: "Sharbati Basmati Rice",
     image: "/images/rice/sharbati-basmati.png",
     description:
       "Soft-textured basmati rice with rich taste ideal for daily meals.",
   },
   {
+    category: "rice",
+    id: 8,
     name: "PR11 Steam Non Basmati Rice",
     image: "/images/rice/pr11-steam-non-basmati.png",
     description:
       "Steam-processed non-basmati rice with uniform grains and reliable quality.",
   },
   {
+    category: "rice",
+    id: 9,
     name: "1509 Golden Sella Basmati Rice",
     image: "/images/rice/1509-golden-sella-basmati.png",
     description:
       "Long-grain basmati rice with golden sella finish and excellent elongation.",
   },
   {
+    category: "rice",
+    id: 10,
     name: "1509 Steam Basmati Rice",
     image: "/images/rice/1509-steam-basmati.png",
     description:
       "Steam-processed basmati rice offering natural flavor and fine texture.",
   },
   {
+    category: "rice",
+    id: 11,
     name: "Indian Basmati Lemon Sella Creamy Rice",
     image: "/images/rice/lemon-sella-creamy.png",
     description:
       "Creamy lemon sella basmati rice with attractive color and premium quality.",
   },
   {
+    category: "rice",
+    id: 12,
     name: "1509 Golden Sella Rice",
     image: "/images/rice/1509-golden-sella.png",
     description:
       "Golden sella rice with uniform grains and export-grade consistency.",
   },
   {
+    category: "rice",
+    id: 13,
     name: "MRM Sun Rice (1121 Extra Long Grain Golden Sella)",
     image: "/images/rice/mrm-sun-rice.png",
     description:
       "Branded extra-long grain basmati rice with superior golden sella finish.",
   },
   {
+    category: "rice",
+    id: 14,
     name: "1509 Lemon Sella Rice",
     image: "/images/rice/1509-lemon-sella.png",
     description:
       "Lemon sella processed rice with creamy texture and excellent cooking yield.",
   },
   {
+    category: "rice",
+    id: 15,
     name: "MRM Moon Rice (1121 Extra Long Grain Lemon Sella)",
     image: "/images/rice/mrm-moon-rice.png",
     description:
@@ -426,54 +456,72 @@ export const riceProducts = [
 ];
 export const FlourProducts = [
   {
+    category: "flour",
+    id: 1,
     name: "Amyra Atta – Premium Quality",
     image: "/images/flour/amyra-atta-premium.png",
     description:
       "Finely milled wheat flour delivering superior softness and nutritional value.",
   },
   {
+    category: "flour",
+    id: 2,
     name: "Amyra Maida – All Purpose",
     image: "/images/flour/amyra-maida-all-purpose.png",
     description:
       "Refined all-purpose flour suitable for baking, cooking, and confectionery.",
   },
   {
+    category: "flour",
+    id: 3,
     name: "Amyra Chakki Atta – Super Value",
     image: "/images/flour/amyra-chakki-atta-super-value.png",
     description:
       "Stone-ground wheat flour offering excellent value and everyday quality.",
   },
   {
+    category: "flour",
+    id: 4,
     name: "Amyra Suji – Premium Quality",
     image: "/images/flour/amyra-suji-premium.png",
     description:
       "High-quality semolina with uniform granules for perfect texture.",
   },
   {
+    category: "flour",
+    id: 6,
     name: "Amyra Maida – Super Value",
     image: "/images/flour/amyra-maida-super-value.png",
     description:
       "Economical refined flour designed for bulk and regular usage.",
   },
   {
+    category: "flour",
+    id: 7,
     name: "Amyra Chiroti Rawa – Premium Quality",
     image: "/images/flour/amyra-chiroti-rawa-premium.png",
     description:
       "Fine rawa ideal for traditional sweets and premium preparations.",
   },
   {
+    category: "flour",
+    id: 8,
     name: "Amyra Maida – Premium Quality",
     image: "/images/flour/amyra-maida-premium.png",
     description:
       "Premium-grade refined flour offering excellent fineness and performance.",
   },
   {
+    category: "flour",
+    id: 9,
     name: "Amyra Suji – Super Value",
     image: "/images/flour/amyra-suji-super-value.png",
     description:
       "Cost-effective semolina suitable for large-scale cooking needs.",
   },
   {
+    category: "flour",
+    id: 10,
     name: "Amyra Chakki Atta – Premium Quality",
     image: "/images/flour/amyra-chakki-atta-premium.png",
     description:
@@ -482,30 +530,40 @@ export const FlourProducts = [
 ];
 export const honeyProducts = [
   {
+    category: "honey",
+    id: 1,
     name: "Sidr Honey",
     image: "/images/honey/sidr-honey.png",
     description:
       "Rare premium honey from Sidr tree nectar, dark amber, rich taste, prized for immunity and medicinal benefits.",
   },
   {
+    category: "honey",
+    id: 2,
     name: "Acacia Honey",
     image: "/images/honey/acacia-honey.png",
     description:
       "Light and clear honey from Acacia blossoms, mild sweetness, stays liquid longer, great for digestion and immunity.",
   },
   {
+    category: "honey",
+    id: 3,
     name: "Karanj Honey",
     image: "/images/honey/karanj-honey.png",
     description:
       "Medicinal honey from Karanj tree, dark color, earthy flavor, used in Ayurveda for skin care and detoxification.",
   },
   {
+    category: "honey",
+    id: 4,
     name: "Sundarban Honey",
     image: "/images/honey/sundarban-honey.png",
     description:
       "Wild forest honey from Sundarbans mangroves, dark and aromatic, rich in minerals and antioxidants for immunity.",
   },
   {
+    category: "honey",
+    id: 5,
     name: "Multi-floral Honey",
     image: "/images/honey/multifloral-honey.png",
     description:

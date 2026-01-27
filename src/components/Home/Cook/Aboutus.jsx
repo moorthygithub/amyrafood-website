@@ -1,22 +1,23 @@
 import { useLocation } from "react-router-dom";
 
 const Aboutus = () => {
+  const location = useLocation();
   return (
     <section className="relative" id="aboutus">
       <div className="container px-4">
-        <div
-          data-aos="zoom-in"
-          data-aos-delay="400"
-          className="absolute right-0 bottom-[-28%] xl:block hidden"
-        >
-          <img
-            src="/images/Cook/burger.png"
-            alt="burger-image"
-        
-            style={{ width: "auto", height: "400px" }}
-          />
-        </div>
-
+        {location.pathname != "/about" && (
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            className="absolute right-0 bottom-[-28%] xl:block hidden"
+          >
+            <img
+              src="/images/Cook/burger.png"
+              alt="burger-image"
+              style={{ width: "auto", height: "400px" }}
+            />
+          </div>
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-12 my-16 gap-x-5">
           <div
             data-aos="zoom-in"

@@ -14,6 +14,7 @@ import HoneyPage from "./pages/product/HoneyPage";
 import FlourPage from "./pages/product/FlourPage";
 import PulpPage from "./pages/product/PulpPage";
 import ScrollToPageTop from "./components/ScrollToPageTop";
+import ProductDetails from "./components/Products/ProductDetails/ProductDetails";
 
 function App() {
   useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/products/honey" element={<HoneyPage />} />
           <Route path="/products/flour" element={<FlourPage />} />
           <Route path="/contact" element={<ContactForm />} />
+          <Route path="/products/:category/:id" element={<ProductDetails />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

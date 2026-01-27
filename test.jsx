@@ -1,8 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
 const ProductList = ({ products = [], title }) => {
-  const navigate = useNavigate();
-
   return (
     <section className="py-20 bg-white">
       <div className="container">
@@ -22,11 +20,13 @@ const ProductList = ({ products = [], title }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {products.map((item, index) => (
             <div
-              key={item.id}
-              onClick={() => navigate(`/products/${item.category}/${item.id}`)}
+              key={index}
+              className="hover:scale-105 transition duration-300 ease-in-out"
               data-aos="fade-up"
             >
-              <div className="group h-full border border-primary/20 rounded-2xl p-6 hover:shadow-lg flex flex-col hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer">
+              {/* CARD */}
+              <div className="group h-full border border-primary/20 rounded-2xl p-6 hover:shadow-lg flex flex-col">
+                {/* IMAGE */}
                 <div className="overflow-hidden rounded-xl mb-5">
                   <img
                     src={item.image}
@@ -35,6 +35,7 @@ const ProductList = ({ products = [], title }) => {
                   />
                 </div>
 
+                {/* CONTENT */}
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {item.name}
@@ -45,6 +46,7 @@ const ProductList = ({ products = [], title }) => {
                   </p>
                 </div>
 
+                {/* BOTTOM BAR */}
                 <div className="mt-4">
                   <div className="h-1 w-12 bg-primary rounded-full group-hover:w-full transition-all duration-300" />
                 </div>
