@@ -60,15 +60,15 @@ const Hero = () => {
                           : "opacity-0 translate-y-6"
                       }`}
                   >
-                    <Link to="/#menu">
-                      <button className="text-lg sm:text-xl font-medium rounded-full text-white py-3 px-8 bg-primary hover:text-primary border border-primary hover:bg-transparent transition duration-300">
-                        View Menu
+                    <Link to="/#products">
+                      <button className="text-lg sm:text-xl cursor-pointer font-medium rounded-full text-white py-3 px-8 bg-primary hover:text-primary border border-primary hover:bg-transparent transition duration-300">
+                        View Products
                       </button>
                     </Link>
 
-                    <Link to="/#reserve">
-                      <button className="text-lg sm:text-xl border border-primary rounded-full font-medium py-3 px-8 text-primary hover:text-white hover:bg-primary transition duration-300">
-                        Reserve a Table
+                    <Link to="/contact">
+                      <button className="text-lg sm:text-xl cursor-pointer border border-primary rounded-full font-medium py-3 px-8 text-primary hover:text-white hover:bg-primary transition duration-300">
+                        Contact Us
                       </button>
                     </Link>
                   </div>
@@ -97,9 +97,11 @@ const Hero = () => {
                       width={68}
                       height={68}
                     />
-                    <p className="text-lg font-normal">
-                      Over 50+ <br /> signature dishes
-                    </p>
+                    <p className="text-base font-medium leading-tight">
+                      {slide.subcontent[0]}
+                      <br />
+                      {slide.subcontent[1]}
+                    </p>{" "}
                   </div>
 
                   <img

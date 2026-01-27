@@ -1,10 +1,8 @@
-import { useLocation } from "react-router-dom";
 import { ProductInfoData } from "../../../data/siteData";
 
 const PulpSection = () => {
-  const location = useLocation();
   return (
-    <section className="relative py-24 bg-primary/10">
+    <section className="relative py-24 bg-primary/10" id="products">
       <div
         data-aos="zoom-in"
         data-aos-delay="400"

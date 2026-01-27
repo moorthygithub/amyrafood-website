@@ -191,21 +191,18 @@ export const FooterLinkData = [
 ];
 export const heroSlides = [
   {
-    title: "Premium Fruit Pulps & Concentrates",
+    title: "Fresh Bold  Flavors",
     description:
-      "High-quality pulps and concentrates suitable for beverages, dairy, bakery, and food processing industries. Carefully sourced from fresh fruits grown across global regions.",
+      "Experience handcrafted dishes made with passion, quality ingredients, and global inspiration.",
     image: "/images/hero/banner-image-3.png",
-    subcontent: ["Globally Sourced", "Fresh Fruits"],
   },
   {
-    title: "Fresh & IQF Frozen Natural Fruits",
+    title: "Luxury Dining Experience",
     description:
-      "We ensure consistent quality through careful selection of fresh fruits from trusted growing regions, delivering rich taste, natural color, and superior purity.",
+      "Where taste meets elegance — perfect for family dinners and celebrations.",
     image: "/images/hero/banner-image-2.png",
-    subcontent: ["100% Natural", "Fruit Ingredients"],
   },
 ];
-
 export const ProductInfoData = [
   {
     id: 1,

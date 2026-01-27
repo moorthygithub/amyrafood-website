@@ -29,8 +29,8 @@ const Footer = () => {
             <Logo />
 
             <p className="text-sm font-medium text-white/80 my-5 max-w-[70%]">
-              Open an account in minutes, get full financial control for much
-              longer.
+              Amyra Food Products promoted by the management of Amyra Fruit
+              Company, leading fruit supplier in India.
             </p>
 
             <div className="flex gap-6 items-center">
