@@ -7,7 +7,7 @@ const Features = () => {
         {/* Header */}
         <div className="text-center mb-14">
           <p className="text-primary text-lg font-normal tracking-widest uppercase">
-            Why Choose Us
+            Why Choose Us 
           </p>
           <h2 className="font-semibold lg:max-w-[60%] mx-auto mt-3">
             Experience More Than Just a Meal

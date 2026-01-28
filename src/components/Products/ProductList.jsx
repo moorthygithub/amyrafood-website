@@ -7,17 +7,30 @@ const ProductList = ({ products = [], title }) => {
     <section className="py-20 bg-white relative">
       <div className="container">
         {location.pathname == "/products/honey" && (
-          <div
-            data-aos="fade-left"
-            data-aos-delay="100"
-            className="absolute right-0 top-0 rotate-180 xl:block hidden"
-          >
-            <img
-              src="/images/honey/sidehoney.png"
-              alt="sidehoney-image"
-              style={{ width: "auto", height: "400px" }}
-            />
-          </div>
+          <>
+            <div
+              data-aos="fade-left"
+              data-aos-delay="100"
+              className="absolute right-0 top-0 rotate-180 xl:block hidden"
+            >
+              <img
+                src="/images/honey/sidehoney.png"
+                alt="sidehoney-image"
+                style={{ width: "auto", height: "400px" }}
+              />
+            </div>
+            <div
+              data-aos="fade-left"
+              data-aos-delay="100"
+              className="absolute left-0 top-0  xl:block hidden"
+            >
+              <img
+                src="/images/honey/sidehoney.png"
+                alt="sidehoney-image"
+                style={{ width: "auto", height: "400px" }}
+              />
+            </div>
+          </>
         )}
         {location.pathname == "/products/flour" && (
           <div
@@ -33,17 +46,30 @@ const ProductList = ({ products = [], title }) => {
           </div>
         )}
         {location.pathname == "/products/pulp" && (
-          <div
-            data-aos="fade-left"
-            data-aos-delay="100"
-            className="absolute left-0 top-0 xl:block hidden"
-          >
-            <img
-              src="/images/common/orange-left.png"
-              alt="burger-image"
-              style={{ width: "auto", height: "200px" }}
-            />
-          </div>
+          <>
+            <div
+              data-aos="fade-left"
+              data-aos-delay="100"
+              className="absolute left-0 top-0 xl:block hidden"
+            >
+              <img
+                src="/images/common/offer-left.png"
+                alt="burger-image"
+                style={{ width: "auto", height: "200px" }}
+              />
+            </div>
+            <div
+              data-aos="fade-right"
+              data-aos-delay="100"
+              className="absolute right-0 top-0  xl:block hidden"
+            >
+              <img
+                src="/images/common/offer-right.png"
+                alt="burger-image"
+                style={{ width: "auto", height: "200px" }}
+              />
+            </div>
+          </>
         )}
         <div
           className="text-center mb-14"

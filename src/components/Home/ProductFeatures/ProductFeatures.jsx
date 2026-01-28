@@ -8,54 +8,6 @@ const iconMap = {
   settings: Settings,
 };
 
-const AppleSVG = () => (
-  <svg viewBox="0 0 120 140" className="w-28 h-32" fill="none">
-    <ellipse cx="60" cy="130" rx="35" ry="6" fill="#00000015" />
-
-    <defs>
-      <radialGradient id="appleGrad" cx="40%" cy="40%">
-        <stop offset="0%" stopColor="#EF4444" />
-        <stop offset="70%" stopColor="#DC2626" />
-        <stop offset="100%" stopColor="#991B1B" />
-      </radialGradient>
-      <radialGradient id="appleHighlight" cx="35%" cy="30%">
-        <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.6" />
-        <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
-      </radialGradient>
-    </defs>
-
-    <path
-      d="M60 15 C80 15 95 30 95 55 C95 85 75 110 60 120 C45 110 25 85 25 55 C25 30 40 15 60 15Z"
-      fill="url(#appleGrad)"
-    />
-    <path
-      d="M60 15 C80 15 95 30 95 55 C95 85 75 110 60 120 C45 110 25 85 25 55 C25 30 40 15 60 15Z"
-      fill="url(#appleHighlight)"
-    />
-
-    <rect x="57" y="8" width="6" height="10" rx="2" fill="#78350F" />
-
-    <path d="M63 12 Q75 8 78 18 Q75 20 63 16Z" fill="#16A34A" />
-  </svg>
-);
-
-const FruitDecoration = ({ type, position, delay }) => {
-  const fruits = {
-    apple: <AppleSVG />,
-  };
-
-  return (
-    <div
-      className={`absolute opacity-0 ${position}`}
-      style={{
-        animation: `float 8s ease-in-out ${delay}s infinite`,
-      }}
-    >
-      {fruits[type]}
-    </div>
-  );
-};
-
 const ProductFeatures = () => {
   return (
     <section
@@ -63,10 +15,19 @@ const ProductFeatures = () => {
       id="why-us"
     >
       <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.08; }
-          50% { transform: translateY(-40px) rotate(-8deg); opacity: 0.15; }
-        }
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+
         
         @keyframes fadeInUp {
           from {
@@ -79,8 +40,21 @@ const ProductFeatures = () => {
           }
         }
       `}</style>
-
-      <FruitDecoration type="apple" position="top-32 left-8" delay="0" />
+      <img
+        src="/images/common/product-shape1.png"
+        alt=""
+        className="
+    absolute
+    left-0
+    top-0
+    w-48 sm:w-64 md:w-72
+    pointer-events-none
+    z-0
+  "
+        style={{
+          animation: "float 8s ease-in-out infinite",
+        }}
+      />
 
       {/* Subtle Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-50/20 via-white to-amber-50/15 pointer-events-none"></div>

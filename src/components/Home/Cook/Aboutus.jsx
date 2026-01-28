@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 const Aboutus = () => {
   const location = useLocation();
   return (
-    <section className="relative" id="aboutus">
+    <section className="relative pt-0" id="aboutus">
       <div className="container px-4">
         {location.pathname != "/about" && (
           <div
@@ -19,17 +19,61 @@ const Aboutus = () => {
           </div>
         )}
         <div className="grid grid-cols-1 lg:grid-cols-12 my-16 gap-x-5">
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="200"
-            className="lg:col-span-6 flex lg:justify-start justify-center"
-          >
-            <img
-              src="/images/common/cook.webp"
-              alt="cook"
-              width={636}
-              height={808}
-            />
+          <div className="lg:col-span-6 flex justify-center ">
+            <div
+              className="
+    relative
+    z-[1]
+    flex
+    items-start
+    max-w-xl
+    pr-[10%]
+    sm:pr-0
+  "
+            >
+              {/* FIRST IMAGE */}
+              <img
+                src="/images/common/feedback-right.jpg"
+                alt="Feedback"
+                className="
+      w-[65%]
+      sm:w-[50%]
+      mt-[20%]
+      sm:mt-[26%]
+      relative
+      z-10
+    "
+              />
+
+              {/* LAST IMAGE */}
+              <img
+                src="/images/common/feedback-right.png"
+                alt="Feedback"
+                className="
+      w-[70%]
+      sm:w-[65%]
+      -ml-[35%]
+      sm:-ml-[30%]
+      relative
+      z-1
+    "
+              />
+
+              {/* BACKGROUND IMAGE */}
+              <img
+                src="/images/common/feedback-bg.png"
+                alt="Feedback BG"
+                className="
+      absolute
+      top-[10%]
+      sm:top-[7%]
+      right-0
+      max-w-[65%]
+      sm:max-w-[50%]
+      -z-10
+    "
+              />
+            </div>
           </div>
 
           <div className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start">

@@ -4,7 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const AboutPage = () => {
   return (
-    <div className=" pt-[105px]">
+    <div className="pt-[105px]">
       {" "}
       <Breadcrumbs title="About Us" items={[{ label: "About Us" }]} />
       <Aboutus />

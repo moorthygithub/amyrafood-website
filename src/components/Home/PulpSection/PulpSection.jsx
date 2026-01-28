@@ -91,6 +91,17 @@ const PulpSection = () => {
                 data-aos-delay={i * 150}
                 className="p-10 text-center backdrop-blur-md bg-primary/5 rounded-3xl relative  hover:bg-primary/10"
               >
+                <div
+                  className="
+          absolute
+          inset-y-0
+          right-0
+          w-full sm:w-2/3
+          bg-primary/10
+          rounded-l-[60%]
+          z-0
+        "
+                />
                 <img
                   src={item.imgSrc}
                   alt={item.title}
@@ -115,6 +126,88 @@ const PulpSection = () => {
             </div>
           ))}
         </div>
+
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-4">
+          {ProductInfoData.map((item, i) => (
+            <div
+              key={item.id}
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
+              className="
+        group
+        relative
+        overflow-hidden
+        rounded-3xl
+        p-4 sm:p-5 lg:p-6
+        bg-primary/5
+        hover:bg-primary/10
+        transition-all
+        duration-500
+        min-h-[240px] sm:min-h-[260px]
+      "
+            >
+              <div
+                className="
+          absolute
+          inset-y-0
+          right-0
+          w-full sm:w-2/3
+          bg-primary/10
+          rounded-l-[60%]
+          z-0
+        "
+              />
+
+              <div className="relative z-10 max-w-full sm:max-w-[55%]">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-black mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-black/60 mb-4 sm:mb-6">
+                  {item.description}
+                </p>
+
+                <a
+                  href={item.link}
+                  className="
+            inline-flex
+            items-center
+            gap-2
+            px-4 sm:px-6
+            py-2.5 sm:py-3
+            text-xs sm:text-sm
+            font-semibold
+            text-white
+            bg-primary
+            rounded-full
+            hover:bg-primary
+            transition
+          "
+                >
+                  Read More
+                  <span>→</span>
+                </a>
+              </div>
+
+              <img
+                src={item.imgSrc}
+                alt={item.title}
+                className="
+          absolute
+          right-3 sm:right-6
+          bottom-3 sm:top-1/2
+          sm:-translate-y-1/2
+          w-24 sm:w-32 md:w-36 lg:w-44
+          object-contain
+          z-10
+          transition-transform
+          duration-500
+          group-hover:scale-110
+        "
+              />
+            </div>
+          ))}
+        </div> */}
       </div>
     </section>
   );
