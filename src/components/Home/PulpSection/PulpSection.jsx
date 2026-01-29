@@ -7,16 +7,16 @@ const PulpSection = () => {
     <section className="relative py-24 bg-primary/10" id="products">
       <div className="container">
         <div
-        data-aos="zoom-in"
-        data-aos-delay="400"
-        className="absolute right-0 bottom-[-20%] z-20 xl:block hidden"
-      >
-        <img
-          src="/images/common/maize.png"
-          alt="maize-image"
-          className="w-auto h-[250px]  transform"
-        />
-      </div>
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          className="absolute right-0 bottom-[-20%] z-20 xl:block hidden"
+        >
+          <img
+            src="/images/common/maize.png"
+            alt="maize-image"
+            className="w-auto h-[250px]  transform"
+          />
+        </div>
         <div
           className="text-center mb-10"
           data-aos="fade-up"
@@ -97,7 +97,7 @@ const PulpSection = () => {
               onClick={() => navigate("/products/pulp")}
               className="text-xl mt-3 font-medium rounded-full text-white py-3 px-8 duration-300 bg-primary w-fit border border-primary hover:bg-transparent hover:text-primary hover:cursor-pointer"
             >
-              Read More →
+              View More →
             </button>
           </div>
         </div>
@@ -143,7 +143,7 @@ const PulpSection = () => {
                   href={item.link}
                   className="inline-block text-primary font-semibold hover:underline"
                 >
-                  Read more →
+                  View more →
                 </a>
               </div>
             </div>
