@@ -5,19 +5,18 @@ const PulpSection = () => {
   const navigate = useNavigate();
   return (
     <section className="relative py-24 bg-primary/10" id="products">
-      <div
+      <div className="container">
+        <div
         data-aos="zoom-in"
         data-aos-delay="400"
-        className="absolute -right-10 bottom-[-20%] z-20 xl:block hidden"
+        className="absolute right-0 bottom-[-20%] z-20 xl:block hidden"
       >
         <img
           src="/images/common/maize.png"
           alt="maize-image"
-          className="w-auto h-[250px]  rotate-10 transform -scale-x-100"
+          className="w-auto h-[250px]  transform"
         />
       </div>
-
-      <div className="container">
         <div
           className="text-center mb-10"
           data-aos="fade-up"
@@ -119,7 +118,7 @@ const PulpSection = () => {
           absolute
           inset-y-0
           right-0
-          w-full sm:w-[97%]
+          w-full sm:w-[84%]
           bg-primary/10
           rounded-l-[60%]
           h-[320px]

@@ -7,13 +7,13 @@ const Aboutus = () => {
       <div className="container px-4">
         {location.pathname != "/about" && (
           <div
-            data-aos="zoom-in"
+            data-aos="fade-left"
             data-aos-delay="400"
             className="absolute right-0 bottom-[-28%] xl:block hidden"
           >
             <img
               src="/images/common/orange-right.png"
-              alt="burger-image"
+              alt="orange-right"
               style={{ width: "auto", height: "400px" }}
             />
           </div>

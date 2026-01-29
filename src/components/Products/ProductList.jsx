@@ -9,7 +9,7 @@ const ProductList = ({ products = [], title }) => {
         {location.pathname == "/products/honey" && (
           <>
             <div
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-delay="100"
               className="absolute right-0 top-0 rotate-180 xl:block hidden"
             >
@@ -20,7 +20,7 @@ const ProductList = ({ products = [], title }) => {
               />
             </div>
             <div
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-delay="100"
               className="absolute left-0 bottom-0  xl:block hidden"
             >
@@ -36,8 +36,7 @@ const ProductList = ({ products = [], title }) => {
           <>
             <div
               data-aos="fade-up"
-              data-aos-delay="zoom-in"
-              className="absolute -left-12 top-0 xl:block hidden"
+              className="absolute left-0 top-0 xl:block hidden"
             >
               <img
                 src="/images/common/maize.png"
@@ -47,8 +46,7 @@ const ProductList = ({ products = [], title }) => {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-delay="zoom-in"
-              className="absolute -right-12 bottom-0 xl:block hidden"
+              className="absolute right-5 bottom-0 xl:block hidden"
             >
               <img
                 src="/images/common/maize.png"
@@ -61,24 +59,24 @@ const ProductList = ({ products = [], title }) => {
         {location.pathname == "/products/pulp" && (
           <>
             <div
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-delay="100"
               className="absolute left-0 top-0 xl:block hidden"
             >
               <img
                 src="/images/common/offer-left.png"
-                alt="burger-image"
+                alt="pulp-image"
                 style={{ width: "auto", height: "200px" }}
               />
             </div>
             <div
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="100"
               className="absolute right-0 bottom-0  xl:block hidden"
             >
               <img
                 src="/images/common/offer-right.png"
-                alt="burger-image"
+                alt="pulp-image"
                 style={{ width: "auto", height: "200px" }}
               />
             </div>
