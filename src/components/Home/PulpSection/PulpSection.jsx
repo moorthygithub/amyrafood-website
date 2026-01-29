@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { ProductInfoData } from "../../../data/siteData";
 
 const PulpSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative py-24 bg-primary/10" id="products">
       <div
@@ -29,6 +31,19 @@ const PulpSection = () => {
           <h2 className="text-3xl font-semibold">Meet Our Culinary Experts</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <img
+            src="/images/common/feedback-bg.png"
+            alt="Feedback BG"
+            className="
+      absolute
+      top-[10%]
+      sm:top-[7%]
+      right-0
+      max-w-[65%]
+      sm:max-w-[50%]
+      -z-10
+    "
+          />
           <div data-aos="fade-up">
             <img
               src="/images/Fruits/mango.png"
@@ -77,6 +92,14 @@ const PulpSection = () => {
               We manufacture frozen mango dices maintained at -18 to -21°C using
               sound mature, GMO-free mangoes.
             </p>
+            <button
+              data-aos="fade-up"
+              data-aos-delay="700"
+              onClick={() => navigate("/products/pulp")}
+              className="text-xl mt-3 font-medium rounded-full text-white py-3 px-8 duration-300 bg-primary w-fit border border-primary hover:bg-transparent hover:text-primary hover:cursor-pointer"
+            >
+              Read More →
+            </button>
           </div>
         </div>
 
@@ -96,16 +119,17 @@ const PulpSection = () => {
           absolute
           inset-y-0
           right-0
-          w-full sm:w-2/3
+          w-full sm:w-[97%]
           bg-primary/10
           rounded-l-[60%]
+          h-[320px]
           z-0
         "
                 />
                 <img
                   src={item.imgSrc}
                   alt={item.title}
-                  className="w-32 h-32 md:w-auto h-auto object-contain mx-auto mb-6"
+                  className="w-32 h-32 md:w-auto md:h-auto object-contain mx-auto mb-6 "
                 />
 
                 <h3 className="text-2xl font-semibold text-black mb-3">

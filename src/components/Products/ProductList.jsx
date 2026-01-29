@@ -22,7 +22,7 @@ const ProductList = ({ products = [], title }) => {
             <div
               data-aos="fade-left"
               data-aos-delay="100"
-              className="absolute left-0 top-0  xl:block hidden"
+              className="absolute left-0 bottom-0  xl:block hidden"
             >
               <img
                 src="/images/honey/sidehoney.png"
@@ -33,17 +33,30 @@ const ProductList = ({ products = [], title }) => {
           </>
         )}
         {location.pathname == "/products/flour" && (
-          <div
-            data-aos="fade-up"
-            data-aos-delay="zoom-in"
-            className="absolute left-0 top-0 xl:block hidden"
-          >
-            <img
-              src="/images/common/maize.png"
-              alt="flour-image"
-              style={{ width: "auto", height: "250px" }}
-            />
-          </div>
+          <>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="zoom-in"
+              className="absolute -left-12 top-0 xl:block hidden"
+            >
+              <img
+                src="/images/common/maize.png"
+                alt="flour-image"
+                style={{ width: "auto", height: "250px" }}
+              />
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="zoom-in"
+              className="absolute -right-12 bottom-0 xl:block hidden"
+            >
+              <img
+                src="/images/common/maize.png"
+                alt="flour-image"
+                className="h-[250px] w-auto rotate-10 transform -scale-x-100"
+              />
+            </div>
+          </>
         )}
         {location.pathname == "/products/pulp" && (
           <>
@@ -61,7 +74,7 @@ const ProductList = ({ products = [], title }) => {
             <div
               data-aos="fade-right"
               data-aos-delay="100"
-              className="absolute right-0 top-0  xl:block hidden"
+              className="absolute right-0 bottom-0  xl:block hidden"
             >
               <img
                 src="/images/common/offer-right.png"
