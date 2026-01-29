@@ -127,7 +127,7 @@ export default function ContactForm() {
               );
             })}
           </div> */}
-          <div className="space-y-6">
+          {/* <div className="space-y-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
 
@@ -157,6 +157,53 @@ export default function ContactForm() {
                     </p>
 
                     <span className="absolute left-0 top-6 h-16 w-1 bg-primary rounded-r opacity-0 opacity-100 transition" />
+                  </div>
+                </div>
+              );
+            })}
+          </div> */}
+          <div className="space-y-6">
+            {contactInfo.map((info, index) => {
+              const Icon = info.icon;
+
+              return (
+                <div
+                  key={index}
+                  data-aos="fade-right"
+                  data-aos-delay={info.delay}
+                >
+                  <div
+                    className="
+            group relative rounded-3xl p-6 border border-primary/20
+            bg-white    
+            transition-all duration-300
+            hover:-translate-y-1 hover:shadow-xl
+          "
+                  >
+                    <div
+                      className="
+              w-14 h-14 rounded-2xl bg-primary/10
+              flex items-center justify-center mb-4
+              transition group-hover:bg-primary
+            "
+                    >
+                      <Icon className="w-6 h-6 text-primary group-hover:text-white" />
+                    </div>
+
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary">
+                      {info.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {info.content}
+                    </p>
+
+                    <span
+                      className="
+              absolute left-0 top-6 h-16 w-1 bg-primary rounded-r
+              opacity-0 group-hover:opacity-100 transition
+            "
+                    />
                   </div>
                 </div>
               );

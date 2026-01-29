@@ -7,13 +7,13 @@ const Aboutus = () => {
       <div className="container px-4">
         {location.pathname != "/about" && (
           <div
-            data-aos="zoom-in"
+            data-aos="fade-left"
             data-aos-delay="400"
             className="absolute right-0 bottom-[-28%] xl:block hidden"
           >
             <img
               src="/images/common/orange-right.png"
-              alt="burger-image"
+              alt="orange-right"
               style={{ width: "auto", height: "400px" }}
             />
           </div>
@@ -21,57 +21,18 @@ const Aboutus = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 my-16 gap-x-5">
           <div className="lg:col-span-6 flex justify-center ">
             <div
-              className="
-    relative
-    z-[1]
-    flex
-    items-start
-    max-w-xl
-    pr-[10%]
-    sm:pr-0
-  "
+              className="relative z-[1] flex items-start max-w-xl pr-[10%] sm:pr-0"
             >
-              {/* FIRST IMAGE */}
               <img
-                src="/images/common/feedback-right.jpg"
+                src="/images/Logo/Logo.png"
                 alt="Feedback"
-                className="
-      w-[65%]
-      sm:w-[50%]
-      mt-[20%]
-      sm:mt-[26%]
-      relative
-      z-10
-    "
+                className="relative z-1"
               />
 
-              {/* LAST IMAGE */}
-              <img
-                src="/images/common/feedback-right.png"
-                alt="Feedback"
-                className="
-      w-[70%]
-      sm:w-[65%]
-      -ml-[35%]
-      sm:-ml-[30%]
-      relative
-      z-1
-    "
-              />
-
-              {/* BACKGROUND IMAGE */}
               <img
                 src="/images/common/feedback-bg.png"
                 alt="Feedback BG"
-                className="
-      absolute
-      top-[10%]
-      sm:top-[7%]
-      right-0
-      max-w-[65%]
-      sm:max-w-[50%]
-      -z-10
-    "
+                className="absolute -top-[10%] sm:-top-[10%] right-0 max-w-[65%] sm:max-w-[50%] -z-10"
               />
             </div>
           </div>

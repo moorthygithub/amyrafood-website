@@ -48,3 +48,11 @@
 html {
   scroll-behavior: smooth;
 }
+::selection {
+  background: #f78914;
+  color: #fff;
+}
+::-moz-selection {
+  background: #f78914;
+  color: #fff;
+}
