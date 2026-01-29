@@ -92,8 +92,8 @@ const Hero = () => {
                       }`}
                   >
                     <img
-                      src="/images/hero/banner-image.png"
-                      alt="pizza"
+                      src="/images/Logo/Logo.png"
+                      alt="logo"
                       width={68}
                       height={68}
                     />

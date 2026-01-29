@@ -42,7 +42,7 @@ const ProductFeatures = () => {
       `}</style>
       <img
         src="/images/common/product-shape1.png"
-        alt=""
+        alt="jack-fruit"
         className="
     absolute
     left-0

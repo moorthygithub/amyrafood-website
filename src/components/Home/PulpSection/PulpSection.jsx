@@ -8,12 +8,12 @@ const PulpSection = () => {
       <div
         data-aos="zoom-in"
         data-aos-delay="400"
-        className="absolute right-0 bottom-[-28%] z-20 xl:block hidden"
+        className="absolute -right-10 bottom-[-20%] z-20 xl:block hidden"
       >
         <img
           src="/images/common/maize.png"
           alt="maize-image"
-          style={{ width: "auto", height: "400px" }}
+          className="w-auto h-[250px]  rotate-10 transform -scale-x-100"
         />
       </div>
 
