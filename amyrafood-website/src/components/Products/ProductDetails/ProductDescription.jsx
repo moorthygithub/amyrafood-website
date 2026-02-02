@@ -18,14 +18,12 @@ const ProductDescription = ({ description }) => {
         }
 
         if (section.type === "list") {
-          console.log(section.items);
-          
           return (
             <div key={index}>
               <h3 className="text-lg font-semibold mb-2">{section.title}</h3>
               <ul className="list-disc list-inside text-gray-600">
                 {section.items.map((item, i) => (
-                  <li key={item?.id}>{item?.value}</li>
+                  <li key={i}>{item}</li>
                 ))}
               </ul>
             </div>
