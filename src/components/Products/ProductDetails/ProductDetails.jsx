@@ -24,48 +24,42 @@ const ProductDetails = () => {
 
   if (!product) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white px-4 py-16">
-        <section className="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full border border-primary/20">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="flex-none w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-primary text-3xl font-semibold">!</span>
-            </div>
-            <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Product not found</h2>
-              <p className="text-sm text-gray-600 mt-1">We couldn't locate that product in our catalogue.</p>
-            </div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+        <div className="bg-white rounded-3xl shadow-xl p-10 max-w-md w-full text-center border border-primary/30">
+          <div className="mx-auto mb-6 w-16 h-16 flex items-center justify-center rounded-full bg-primary/15">
+            <span className="text-primary text-3xl font-bold">!</span>
           </div>
 
-          <div className="text-gray-600 mb-6">
-            It might have been removed, renamed, or the link could be incorrect. Try one of the options below.
-          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            Product Not Found
+          </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <p className="text-gray-600 mb-6">
+            The product you’re looking for doesn’t exist or has been removed.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate(-1)}
-              className="w-full px-4 py-3 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition"
-              aria-label="Go back"
+              className="px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition"
             >
-              Go back
+              Go Back
             </button>
 
             <button
-              onClick={() => navigate('/products')}
-              className="w-full px-4 py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary/5 transition"
-              aria-label="View products"
+              onClick={() => navigate(-1)}
+              className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/10 transition"
             >
-              View all products
+              View Products
             </button>
           </div>
-
-          <div className="mt-6 text-xs text-gray-400">If you need help, visit our Contact page or try searching from the Products listing.</div>
-        </section>
-      </main>
+        </div>
+      </div>
     );
   }
 
   return (
-    <div className="pt-[105px] pb-12">
+    <div className="pt-[105px]"> 
       <Breadcrumbs
         title={product.name}
         items={[
@@ -75,37 +69,105 @@ const ProductDetails = () => {
         ]}
       />
 
-      <section className="container py-12">
+      {/*  Middle Section UI Upgraded  */}
+
+      <section className="container py-16">
         <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            {/* IMAGE */}
-            <div className="md:col-span-6 flex items-center justify-center">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full max-w-[520px] h-[360px] object-contain rounded-lg"
-              />
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+
+            {/* IMAGE LEFT */}
+            <div className="md:col-span-7 flex justify-center">
+              <div className="w-full max-w-3xl overflow-hidden rounded-2xl bg-gray-50 shadow-sm border border-gray-100">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-[520px] object-contain transition-transform duration-300 hover:scale-105"
+                />
+              </div>
             </div>
 
-            {/* DETAILS */}
-            <div className="md:col-span-6">
-              <h2 className="text-2xl font-semibold text-gray-800">{product.name}</h2>
-              <p className="text-sm text-gray-500 mt-1">{category.toUpperCase()}</p>
+            {/* TEXT RIGHT */}
+            <div className="md:col-span-5">
 
-              <div className="mt-6 text-gray-600">
-                <ProductDescription description={product.description} />
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                {product.name}
+              </h2>
+
+              <div className="mt-2 text-sm uppercase tracking-wide text-gray-500">
+                {category}
               </div>
 
+              <div className="mt-5 h-px bg-gray-100" />
+
+              {/* Preview text  */}
+              <div className="mt-6">
+                <p className="text-gray-700 leading-7">
+
+                  {typeof product.description === "string" ? (
+                    product.description.length > 560
+                      ? `${product.description.slice(0, 560).trim()}...`
+                      : product.description
+                  ) : product.description?.summary ? (
+                    product.description.summary.length > 560
+                      ? `${product.description.summary.slice(0, 560).trim()}...`
+                      : product.description.summary
+                  ) : (
+                    ""
+                  )}
+
+                </p>
+
+                <p className="mt-3 text-sm text-gray-500">
+                  Scroll down to read full details.
+                </p>
+              </div>
+
+              {/* CTA */}
               <div className="mt-8">
                 <button
-                  onClick={() => navigate('/contact')}
-                  className="inline-block px-8 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition"
+                  onClick={() => navigate("/contact")}
+                  className="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition shadow-md"
                 >
                   Enquire Now
                 </button>
               </div>
+
             </div>
           </div>
+
+          {/* READ MORE  */}
+
+          <div className="mt-10">
+            <details className="group border border-gray-100 rounded-2xl p-6 shadow-sm bg-white">
+
+              <summary className="cursor-pointer list-none flex justify-between items-center text-primary font-semibold">
+
+                <span>Read More</span>
+
+                <svg
+                  className="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+
+              </summary>
+
+              <div className="mt-5 text-gray-700 leading-7">
+                <ProductDescription description={product.description} />
+              </div>
+
+            </details>
+          </div>
+
         </div>
       </section>
     </div>
