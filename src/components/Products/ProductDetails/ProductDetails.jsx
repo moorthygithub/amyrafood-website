@@ -3,12 +3,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   FlourProducts,
   honeyProducts,
+  PulpProducts,
   riceProducts,
 } from "../../../data/siteData";
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import ProductDescription from "./ProductDescription";
 
 const productMap = {
+  pulp: PulpProducts,
   flour: FlourProducts,
   rice: riceProducts,
   honey: honeyProducts,
@@ -22,42 +24,48 @@ const ProductDetails = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-        <div className="bg-white rounded-3xl shadow-xl p-10 max-w-md w-full text-center border border-primary/30">
-          <div className="mx-auto mb-6 w-16 h-16 flex items-center justify-center rounded-full bg-primary/15">
-            <span className="text-primary text-3xl font-bold">!</span>
+      <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white px-4 py-16">
+        <section className="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full border border-primary/20">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="flex-none w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+              <span className="text-primary text-3xl font-semibold">!</span>
+            </div>
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Product not found</h2>
+              <p className="text-sm text-gray-600 mt-1">We couldn't locate that product in our catalogue.</p>
+            </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Product Not Found
-          </h2>
+          <div className="text-gray-600 mb-6">
+            It might have been removed, renamed, or the link could be incorrect. Try one of the options below.
+          </div>
 
-          <p className="text-gray-600 mb-6">
-            The product you’re looking for doesn’t exist or has been removed.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <button
               onClick={() => navigate(-1)}
-              className="px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition cursor-pointer"
+              className="w-full px-4 py-3 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition"
+              aria-label="Go back"
             >
-              Go Back
+              Go back
             </button>
 
             <button
-              onClick={() => navigate(-1)}
-              className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/10 transition cursor-pointer"
+              onClick={() => navigate('/products')}
+              className="w-full px-4 py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary/5 transition"
+              aria-label="View products"
             >
-              View Products
+              View all products
             </button>
           </div>
-        </div>
-      </div>
+
+          <div className="mt-6 text-xs text-gray-400">If you need help, visit our Contact page or try searching from the Products listing.</div>
+        </section>
+      </main>
     );
   }
 
   return (
-    <div className="pt-[105px]">
+    <div className="pt-[105px] pb-12">
       <Breadcrumbs
         title={product.name}
         items={[
@@ -67,35 +75,37 @@ const ProductDetails = () => {
         ]}
       />
 
-      <section className="container py-16 text-center">
-        {/* BIG TITLE */}
-        {/* <h1 className="text-4xl font-bold mb-8">{product.name}</h1> */}
-  
-        {/* IMAGE CENTER */}
-        <img
-          src={product.image}
-          alt={product.name}
-          className="mx-auto w-full max-w-xl h-[360px] object-contain rounded-2xl mb-10"
-        />
+      <section className="container py-12">
+        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            {/* IMAGE */}
+            <div className="md:col-span-6 flex items-center justify-center">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full max-w-[520px] h-[360px] object-contain rounded-lg"
+              />
+            </div>
 
-        {/* GRAY TITLE */}
-        <h2 className="text-2xl font-semibold text-gray-500 mb-8">
-          {product.name}
-        </h2>
+            {/* DETAILS */}
+            <div className="md:col-span-6">
+              <h2 className="text-2xl font-semibold text-gray-800">{product.name}</h2>
+              <p className="text-sm text-gray-500 mt-1">{category.toUpperCase()}</p>
 
-        {/* DESCRIPTION */}
-        <div className="max-w-3xl mx-auto text-left">
-          <ProductDescription description={product.description} />
-        </div>
+              <div className="mt-6 text-gray-600">
+                <ProductDescription description={product.description} />
+              </div>
 
-        {/* CTA */}
-        <div className="mt-12">
-          <button
-            onClick={() => navigate("/contact")}
-            className="bg-primary text-white px-8 py-3 rounded-xl hover:bg-primary/90 transition"
-          >
-            Enquire Now
-          </button>
+              <div className="mt-8">
+                <button
+                  onClick={() => navigate('/contact')}
+                  className="inline-block px-8 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition"
+                >
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

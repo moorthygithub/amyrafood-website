@@ -99,7 +99,7 @@ const ProductList = ({ products = [], title }) => {
           {products.map((item, index) => (
             <div
               key={item.id}
-              onClick={() => navigate(`/products/${item.category}/${item.id}`)}
+              // onClick={() => navigate(`/products/${item.category}/${item.id}`)}
               data-aos="fade-up"
             >
               <div className="group h-full border border-primary/20 rounded-2xl p-6 hover:shadow-lg flex flex-col hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer">
