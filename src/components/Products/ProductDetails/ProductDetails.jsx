@@ -59,7 +59,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="pt-[105px]">
+    <div className="pt-[105px]"> 
       <Breadcrumbs
         title={product.name}
         items={[
@@ -69,7 +69,7 @@ const ProductDetails = () => {
         ]}
       />
 
-      {/* ===== Middle Section UI Upgraded ===== */}
+      {/*  Middle Section UI Upgraded  */}
 
       <section className="container py-16">
         <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10">
@@ -100,17 +100,17 @@ const ProductDetails = () => {
 
               <div className="mt-5 h-px bg-gray-100" />
 
-              {/* Preview text safely */}
+              {/* Preview text  */}
               <div className="mt-6">
                 <p className="text-gray-700 leading-7">
 
                   {typeof product.description === "string" ? (
-                    product.description.length > 260
-                      ? `${product.description.slice(0, 260).trim()}...`
+                    product.description.length > 560
+                      ? `${product.description.slice(0, 560).trim()}...`
                       : product.description
                   ) : product.description?.summary ? (
-                    product.description.summary.length > 260
-                      ? `${product.description.summary.slice(0, 260).trim()}...`
+                    product.description.summary.length > 560
+                      ? `${product.description.summary.slice(0, 560).trim()}...`
                       : product.description.summary
                   ) : (
                     ""
@@ -119,7 +119,7 @@ const ProductDetails = () => {
                 </p>
 
                 <p className="mt-3 text-sm text-gray-500">
-                  Scroll down to read full details
+                  Scroll down to read full details.
                 </p>
               </div>
 
@@ -136,14 +136,14 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* READ MORE BELOW */}
+          {/* READ MORE  */}
 
           <div className="mt-10">
             <details className="group border border-gray-100 rounded-2xl p-6 shadow-sm bg-white">
 
               <summary className="cursor-pointer list-none flex justify-between items-center text-primary font-semibold">
 
-                <span>Read more</span>
+                <span>Read More</span>
 
                 <svg
                   className="w-5 h-5 transition-transform duration-200 group-open:rotate-180"

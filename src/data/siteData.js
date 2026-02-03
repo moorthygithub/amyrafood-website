@@ -1049,7 +1049,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1110,7 +1110,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1170,7 +1170,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1230,7 +1230,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1290,7 +1290,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1350,7 +1350,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1410,7 +1410,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1470,7 +1470,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1532,7 +1532,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1595,7 +1595,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1656,7 +1656,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1716,7 +1716,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             }, 
             {
               id:4,
@@ -1776,7 +1776,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1836,7 +1836,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
@@ -1896,7 +1896,7 @@ export const riceProducts = [
             },
             {
               id:3,
-              value:  "  Moisture: Max 12–14%",
+              value:  "  Moisture: Max 12 – 14%",
             },
             {
               id:4,
