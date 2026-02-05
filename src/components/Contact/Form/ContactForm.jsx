@@ -47,7 +47,7 @@ export default function ContactForm() {
     setShowThanks(false);
 
     try {
-      const response = await fetch("https://www.amyrafood.com/send-email.php", {
+      const response = await fetch("https://amyraprimetrading.com/send-email.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

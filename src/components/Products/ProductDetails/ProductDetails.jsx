@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from "react-router-dom";
-
 import {
   FlourProducts,
   honeyProducts,
@@ -8,6 +7,7 @@ import {
 } from "../../../data/siteData";
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import ProductDescription from "./ProductDescription";
+import { useState } from "react";
 
 const productMap = {
   pulp: PulpProducts,
@@ -19,6 +19,7 @@ const productMap = {
 const ProductDetails = () => {
   const { category, id } = useParams();
   const navigate = useNavigate();
+
   const products = productMap[category] || [];
   const product = products.find((p) => p.id == id);
 
@@ -35,7 +36,7 @@ const ProductDetails = () => {
           </h2>
 
           <p className="text-gray-600 mb-6">
-            The product you’re looking for doesn’t exist or has been removed.
+            The product you're looking for doesn't exist or has been removed.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -59,116 +60,74 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="pt-[105px]"> 
+    <div className="pt-[105px]">
+      {/* Breadcrumbs */}
       <Breadcrumbs
         title={product.name}
         items={[
           { label: "Products", path: "/products" },
-          { label: category.toUpperCase(), path: `/products/${category}` },
+          {
+            label: category.charAt(0).toUpperCase() + category.slice(1),
+            path: `/products/${category}`,
+          },
           { label: product.name },
         ]}
       />
 
-      {/*  Middle Section UI Upgraded  */}
-
-      <section className="container py-16">
-        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10">
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-
-            {/* IMAGE LEFT */}
-            <div className="md:col-span-7 flex justify-center">
-              <div className="w-full max-w-3xl overflow-hidden rounded-2xl bg-gray-50 shadow-sm border border-gray-100">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-[520px] object-contain transition-transform duration-300 hover:scale-105"
-                />
-              </div>
+      <section className="py-16 px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+          <div className="md:col-span-5 flex justify-center">
+            <div className="w-full max-w-3xl overflow-hidden rounded-2xl">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-[400px]  object-contain transition-transform duration-300 hover:scale-105"
+              />
             </div>
+          </div>
 
-            {/* TEXT RIGHT */}
-            <div className="md:col-span-5">
-
+          <div className="md:col-span-7 space-y-6">
+            <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
                 {product.name}
               </h2>
-
-              <div className="mt-2 text-sm uppercase tracking-wide text-gray-500">
+              <div className="mt-2 inline-block px-3 py-1 text-xs uppercase tracking-wide text-white bg-primary rounded-full">
                 {category}
               </div>
+            </div>
 
-              <div className="mt-5 h-px bg-gray-100" />
+            <div className="h-px bg-gray-100" />
 
-              {/* Preview text  */}
-              <div className="mt-6">
+            {product.shortdescription && (
+              <div>
                 <p className="text-gray-700 leading-7">
-
-                  {typeof product.description === "string" ? (
-                    product.description.length > 560
-                      ? `${product.description.slice(0, 560).trim()}...`
-                      : product.description
-                  ) : product.description?.summary ? (
-                    product.description.summary.length > 560
-                      ? `${product.description.summary.slice(0, 560).trim()}...`
-                      : product.description.summary
-                  ) : (
-                    ""
-                  )}
-
-                </p>
-
-                <p className="mt-3 text-sm text-gray-500">
-                  Scroll down to read full details.
+                  {product.shortdescription}
                 </p>
               </div>
-
-              {/* CTA */}
-              <div className="mt-8">
-                <button
-                  onClick={() => navigate("/contact")}
-                  className="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition shadow-md"
-                >
-                  Enquire Now
-                </button>
+            )}
+            {product?.description?.summary && (
+              <div className="text-gray-700 leading-relaxed">
+                <p>{product?.description.summary ?? ""}</p>
               </div>
+            )}
 
+            <div>
+              <button
+                onClick={() => navigate("/contact")}
+                className="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition shadow-md hover:shadow-lg"
+              >
+                Enquire Now
+              </button>
             </div>
           </div>
-
-          {/* READ MORE  */}
-
-          <div className="mt-10">
-            <details className="group border border-gray-100 rounded-2xl p-6 shadow-sm bg-white">
-
-              <summary className="cursor-pointer list-none flex justify-between items-center text-primary font-semibold">
-
-                <span>Read More</span>
-
-                <svg
-                  className="w-5 h-5 transition-transform duration-200 group-open:rotate-180"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-
-              </summary>
-
-              <div className="mt-5 text-gray-700 leading-7">
-                <ProductDescription description={product.description} />
-              </div>
-
-            </details>
-          </div>
-
         </div>
+
+        {/* Product Description Section */}
+        {product.description && (
+          <div className="mt-12 pt-8 border-t border-gray-100">
+            <ProductDescription description={product.description} />
+          </div>
+        )}
       </section>
     </div>
   );

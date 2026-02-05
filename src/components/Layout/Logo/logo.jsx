@@ -11,7 +11,7 @@ const Logo = () => {
         className="w-auto h-16"
       />
       <div className="leading-tight">
-        <p className="md:text-2xl font-bold text-current">Amrya</p>
+        <p className="md:text-2xl font-bold text-current">Amyra</p>
         <p className="md:text-2xl text-current">Prime</p>
       </div>
     </Link>
