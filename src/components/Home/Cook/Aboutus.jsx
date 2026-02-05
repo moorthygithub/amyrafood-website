@@ -20,11 +20,9 @@ const Aboutus = () => {
         )}
         <div className="grid grid-cols-1 lg:grid-cols-12 my-16 gap-x-5">
           <div className="lg:col-span-6 flex justify-center ">
-            <div
-              className="relative z-[1] flex items-start max-w-xl pr-[10%] sm:pr-0"
-            >
+            <div className="relative z-[1] flex items-start max-w-xl pr-[10%] sm:pr-0">
               <img
-                src="/images/Logo/Logo.png"
+                src="/images/Logo/about-us.png"
                 alt="Feedback"
                 className="relative z-1"
               />
